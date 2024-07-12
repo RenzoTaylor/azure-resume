@@ -2,7 +2,7 @@ window.addEventListener('DOMContentLoaded', (Event) =>{ // Sets up an event list
     getVisitCount(); // Calls the getVisitCount function when the document is fully loaded
 })
 
-const functionApi = ''; // Defines a constant named functionApi and assigns it an empty string. Replace this empty string with a valid URL
+const functionApi = 'http://localhost:7071/api/get-resume-counter'; // Defines a constant named functionApi and assigns it an empty string. Replace this empty string with a valid URL
 
 const getVisitCount = () => { // Defines a function named getVisitCount
     let count = 30; // Initializes a variable count with the value 30

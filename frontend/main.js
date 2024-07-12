@@ -18,4 +18,3 @@ const getVisitCount = () => { // Defines a function named getVisitCount
         });
         return count; // Returns the count value from the getVisitCount function. Note: this returned value is not used in the provided code
 };
-test

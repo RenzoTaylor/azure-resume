@@ -2,11 +2,12 @@ window.addEventListener('DOMContentLoaded', (Event) =>{ // Sets up an event list
     getVisitCount(); // Calls the getVisitCount function when the document is fully loaded
 })
 
-const functionApi = 'http://localhost:7071/api/get-resume-counter'; // Defines a constant named functionApi and assigns it an empty string. Replace this empty string with a valid URL
+const functionApiurl = 'https://getresumecounter133.azurewebsites.net/api/get-resume-counter?code=QF6qSQMMu1Qn5k5qb0cJ6Nm8qmjI3EQTWU9Ezh0BImH_AzFuYGt0gQ%3D%3D';
+const localfunctionApi = 'http://localhost:7071/api/get-resume-counter'; // Defines a constant named functionApi and assigns it an empty string. Replace this empty string with a valid URL
 
 const getVisitCount = () => { // Defines a function named getVisitCount
     let count = 30; // Initializes a variable count with the value 30
-    fetch(functionApi) // Makes a network request to the URL specified by functionApi
+    fetch(functionApiurl) // Makes a network request to the URL specified by functionApi
         .then(response => response.json()) // Converts the response from the API (which is typically in JSON format) to a JavaScript object
         .then(response => { // Handles the converted response object
             console.log("Website called function API."); // Logs a message to the console indicating that the API was called

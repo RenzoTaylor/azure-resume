@@ -1,34 +1,37 @@
 name: deploy_frontend
-# Deploys when a push is made from frontend folder
+# Deploys when a push is made from the frontend folder
 
 on:
-    push:
-        branches: [ main ]
-        paths:
-        - 'frontend/**'
+  push:
+    branches: [ main ]
+    paths:
+      - 'frontend/**'
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: azure/login@v1
-      with:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Log in to Azure
+        uses: azure/login@v1
+        with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-    - name: Upload to blob storage
-      uses: azure/CLI@v1
-      with:
-        inlineScript: |
-            az storage blob upload-batch --account-name azureresumestorage133 --auth-mode key -d '$web' -s frontend/
-    - name: Purge CDN endpoint
-      uses: azure/CLI@v1
-      with:
-        inlineScript: |
-          az cdn endpoint purge --content-paths  "/*" --profile-name "azureresumechallenge" --name "azureresumechallenge" --resource-group "azureprojects133-rg"
+      - name: Upload to Azure Blob Storage
+        uses: azure/CLI@v1
+        with:
+          inlineScript: |
+            az storage blob upload-batch --account-name azureresumestorage133 --auth-mode key -d '$web' -s frontend/ --overwrite
 
-  # Azure logout
-    - name: logout
-      run: |
-            az logout
-      if: always()
+      - name: Purge Azure CDN endpoint
+        uses: azure/CLI@v1
+        with:
+          inlineScript: |
+            az cdn endpoint purge --content-paths "/*" --profile-name "azureresumechallenge" --name "azureresumechallenge" --resource-group "azureprojects133-rg"
+
+      - name: Log out of Azure
+        run: |
+          az logout
+        if: always()

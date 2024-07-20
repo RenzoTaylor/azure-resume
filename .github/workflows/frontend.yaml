@@ -1,11 +1,11 @@
 name: deploy_frontend
-# Deploys when a push is made from frontend folder
+# Deploys when a push is made from the frontend folder
 
 on:
     push:
         branches: [ main ]
-        paths:
-        - 'frontend/**'
+        paths: 
+          - 'frontend/**'
 
 jobs:
   build:
@@ -20,7 +20,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-            az storage blob upload-batch --account-name azureresumestorage133 --auth-mode key -d '$web' -s frontend/
+            az storage blob upload-batch --account-name azureresumestorage133 --auth-mode key -d '$web' -s frontend/ --overwrite
     - name: Purge CDN endpoint
       uses: azure/CLI@v1
       with:

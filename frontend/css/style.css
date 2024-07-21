@@ -1,10 +1,11 @@
 .element-container {
     display: inline-flex;
     align-items: center;
+    color: aqua !important;
 }
 
 .element {
-    color: #3498db;
+    color: #3498db !important;
     font-weight: bold;
     margin-right: 10px;
 }

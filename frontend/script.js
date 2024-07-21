@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const element = document.querySelector('.element');
+    const loadingIcon = document.querySelector('.loading-icon');
     const values = element.getAttribute('data-values').split(',').map(item => item.trim());
     const loop = element.getAttribute('data-loop') === 'true';
     const backdelay = parseInt(element.getAttribute('data-backdelay')) * 1000; // Convert seconds to milliseconds
@@ -36,5 +37,15 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(type, delay);
     }
 
-    type();
+    function toggleLoadingIcon(show) {
+        loadingIcon.style.display = show ? 'inline-block' : 'none';
+    }
+
+    function startTyping() {
+        toggleLoadingIcon(true);
+        type();
+        setTimeout(() => toggleLoadingIcon(false), 1000);
+    }
+
+    startTyping();
 });

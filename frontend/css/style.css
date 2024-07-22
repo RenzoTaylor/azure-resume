@@ -5,11 +5,12 @@
 }
 
 .element {
-    color: #3498db !important;
-    font-weight: bold;
+    color: darkorange !important;
+    font-weight: normal;
     margin-right: 10px;
 }
 
+/*
 .loading-icon {
     border: 4px solid #f3f3f3; /* Light grey */
     border-top: 4px solid teal; /* Teal */
@@ -18,6 +19,7 @@
     height: 20px;
     animation: spin 1s linear infinite;
 }
+*/
 
 @keyframes spin {
     0% { transform: rotate(0deg); }

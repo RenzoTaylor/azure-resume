@@ -1,6 +1,6 @@
 ![gh-banner](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVdK-M5bBRtsG-GxbHQh_QBfpEd9e-yBDJXg&s)
 # Cloud Resume Challenge
-This is a project I completed to compliment my AZ-900 certification.
+This is a project I completed to compliment my <a href="https://learn.microsoft.com/api/credentials/share/en-us/LorenzoTaylor-3120/6F95045A1DCDBFBD?sharingId=8C20883C7202504B">Microsoft Certified: Azure Fundamentals AZ-900 Certification.</a>
 
 ## Project Goals
 

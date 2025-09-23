@@ -10,7 +10,7 @@ This is a project I completed to compliment my <a href="https://learn.microsoft.
 - Showcase skills and knowledge in cloud computing and web development.
 
 ## Steps Taken
-
+ 
 ### Prep Phase
 
 - Researched the Azure Cloud Resume Challenge and its requirements.
